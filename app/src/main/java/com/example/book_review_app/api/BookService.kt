@@ -17,5 +17,4 @@ interface BookService {
     fun getBestSellerBooks(
         @Query("key") apiKey: String
     ): retrofit2.Call<BestSellerDto>
-
 }
