@@ -64,7 +64,6 @@ class MainActivity : AppCompatActivity() {
                         Log.e(TAG, "NOT!! SUCCESS")
                         return
                     }
-                    Log.d(TAG, "yes!!" + response.body().toString())
                     adapter.submitList(response.body()?.books.orEmpty())
                 }
 
@@ -113,6 +112,7 @@ class MainActivity : AppCompatActivity() {
         })
         binding.historyRecyclerView.layoutManager = LinearLayoutManager(this)
         binding.historyRecyclerView.adapter = historyAdapter
+        hideHistoryView()
     }
 
     private fun initSearchEditText() {
