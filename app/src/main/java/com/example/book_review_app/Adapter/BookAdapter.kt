@@ -16,8 +16,6 @@ class BookAdapter: ListAdapter<Book, BookAdapter.BookItemViewHolder>(diffUtil) {
         fun bind(bookModel: Book) {
             binding.titleTextView.text = bookModel.title
             binding.descriptionTextView.text = bookModel.description
-            Log.d("BookAdapter", binding.titleTextView.text.toString())
-            Log.d("BookAdapter", binding.descriptionTextView.text.toString())
             Glide.with(binding.coverImageView.context)
                 .load(bookModel.coverSmallUrl)
                 .into(binding.coverImageView)
