@@ -1,5 +1,6 @@
 package com.example.book_review_app.Adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -15,7 +16,8 @@ class BookAdapter: ListAdapter<Book, BookAdapter.BookItemViewHolder>(diffUtil) {
         fun bind(bookModel: Book) {
             binding.titleTextView.text = bookModel.title
             binding.descriptionTextView.text = bookModel.description
-
+            Log.d("BookAdapter", binding.titleTextView.text.toString())
+            Log.d("BookAdapter", binding.descriptionTextView.text.toString())
             Glide.with(binding.coverImageView.context)
                 .load(bookModel.coverSmallUrl)
                 .into(binding.coverImageView)
