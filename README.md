@@ -29,7 +29,7 @@
 * Retrofit2 - 인터파크 API를 활용해 서버에 저장된 데이터를 받아오기 위해 Retrofit2 라이브러리를 활용하였습니다.</br>Data class를 정의하여 데이터 모델을 만들고 DTO(Data Transfer Object)를 만들어 JSON 타입을 변환해서 key 값을 직렬화하여 지정한 property에 담기도록 하였습니다. </br>검색 결과를 가져오고 베스트셀러 목록을 가져오는 통신을 정의하는 서비스 interface를 정의했습니다.
 * Glide - 서버에서 불러온 도서 이미지 URL을 사용해서 ImageView에 도서 이미지를 띄우기 위해 Glide 라이브러리를 사용했습니다.
 * ConstraintLayout - ConstraintLayout의 Chain을 이용하여 View들의 위치를 설정하였습니다.
-* RecyclerView - 도서 목록을 보여주기 위해 RecyclerView를 활용했습니다. ListViewAdapter를 상속받아 DiffUtil을 통한 데이터 업데이트가 이뤄지도록 구현하였습니다.
+* RecyclerView - 도서 목록을 보여주기 위해 RecyclerView를 활용했습니다. </br>ListViewAdapter를 상속받아 DiffUtil을 통한 데이터 업데이트가 이뤄지도록 구현하였습니다.
 </br>
 
 ***
