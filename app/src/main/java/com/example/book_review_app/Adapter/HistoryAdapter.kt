@@ -8,12 +8,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.book_review_app.databinding.ItemHistoryBinding
 import com.example.book_review_app.model.History
 
-class HistoryAdapter(val historyDeleteClickedListener: (String) -> Unit): ListAdapter<History, HistoryAdapter.HistoryItemViewHolder>(diffUtil) {
+class HistoryAdapter(val historyDeleteClickedListener: (String) -> Unit, val historyKeywordClicktedListener: (String) -> Unit): ListAdapter<History, HistoryAdapter.HistoryItemViewHolder>(diffUtil) {
 
     inner class HistoryItemViewHolder(private val binding: ItemHistoryBinding): RecyclerView.ViewHolder(binding.root) {
 
         fun bind(historyModel: History) {
             binding.historyKeywordTextView.text = historyModel.keyword
+            binding.historyKeywordTextView.setOnClickListener {
+                historyKeywordClicktedListener(historyModel.keyword.orEmpty())
+            }
             binding.historyKeywordDeleteButton.setOnClickListener {
                 historyDeleteClickedListener(historyModel.keyword.orEmpty())
             }
