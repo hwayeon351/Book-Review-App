@@ -1,7 +1,7 @@
 # Book-Review-App
 도서 리뷰 안드로이드 앱
 
-#### 인터파크 API를 활용해 도서 목록을 보여주고 도서 리뷰를 작성하고 저장할 수 있는 도서 리뷰 앱 입니다.
+#### 인터파크 API를 활용해 도서 목록을 보거나, 도서 리뷰를 작성하 저장할 수 있는 도서 리뷰 앱 입니다.
 ### Blog
 * <https://hwayomingdlog.tistory.com/247>
 * <https://hwayomingdlog.tistory.com/248>
