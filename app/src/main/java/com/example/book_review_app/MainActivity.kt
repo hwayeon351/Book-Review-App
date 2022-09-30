@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         initHistoryRecyclerView()
         initSearchEditText()
 
-        db = getAppDatabase(this)
+        db = AppDatabase.getInstance(this)!!
 
         val retrofit = Retrofit.Builder()
             .baseUrl("https://book.interpark.com")
@@ -112,7 +112,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initHistoryRecyclerView() {
-        historyAdapter = HistoryAdapter(historyDeleteClickedListener = {
+        historyAdapter = HistoryAdapter(
+            historyDeleteClickedListener = {
             deleteSearchKeyword(it)
         }, historyKeywordClicktedListener = {
             search(it, true)
@@ -168,13 +169,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun saveSearchKeyword(keyword: String) {
         Thread {
-            db.historyDao().insertHistory(History(null, keyword))
+            db.historyDao()?.insertHistory(History(null, keyword))
         }.start()
     }
 
     private fun deleteSearchKeyword(keyword: String) {
         Thread {
-            db.historyDao().delete(keyword)
+            db.historyDao()?.delete(keyword)
             showHistoryView()
         }.start()
     }
